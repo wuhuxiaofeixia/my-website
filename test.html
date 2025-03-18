@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh" class="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>现代习题练习集</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script>
+tailwind.config = {
+darkMode: 'class',
+theme: {
+extend: {
+colors: {
+primary: {
+50: '#f0f9ff',
+100: '#e0f2fe',
+200: '#bae6fd',
+300: '#7dd3fc',
+400: '#38bdf8',
+500: '#0ea5e9',
+600: '#0284c7',
+700: '#0369a1',
+800: '#075985',
+900: '#0c4a6e',
+},
+},
+fontFamily: {
+sans: ['Inter', 'sans-serif'],
+},
+spacing: {
+'18': '4.5rem',
+},
+transitionProperty: {
+'height': 'height',
+}
+}
+}
+}
+</script>
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    .fade-in {
+        animation: fadeIn 0.5s ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+        0% { opacity: 0; transform: translateY(10px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+    
+    .exercise-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+    
+    .dark .exercise-card:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    }
+    
+    /* 自定义滚动条 */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+    }
+    
+    .dark ::-webkit-scrollbar-thumb {
+        background: #475569;
+    }
+    
+    /* 用于MathJax公式的样式 */
+    .math-display {
+        overflow-x: auto;
+        padding: 0.5rem 0;
+    }
+</style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+<!-- 顶部导航栏 -->
+<header class="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-sm">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-16">
+<div class="flex items-center space-x-2">
+<i class="fas fa-book-open text-primary-600 dark:text-primary-400"></i>
+<span class="font-bold text-lg">习题练习集</span>
+</div>
+<div class="flex items-center space-x-4">
+<button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+<i class="fas fa-sun text-yellow-500 dark:hidden"></i>
+<i class="fas fa-moon text-blue-300 hidden dark:block"></i>
+</button>
+</div>
+</div>
+</div>
+</header>
+
+<!-- 主要内容区域 -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-10">
+    <!-- 介绍卡片 -->
+    <section class="mb-10 fade-in" style="animation-delay: 0.1s">
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 md:p-8">
+            <h1 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">习题练习集标题</h1>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">这里是对本练习集的详细介绍和说明，帮助学生理解本练习集的目标、范围和使用方法。</p>
+            <div class="flex flex-wrap gap-3">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+                    <i class="fas fa-tag mr-1 text-xs"></i>数学
+                </span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                    <i class="fas fa-signal mr-1 text-xs"></i>中级
+                </span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">
+                    <i class="fas fa-clock mr-1 text-xs"></i>60分钟
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 习题部分 -->
+    <section class="space-y-6 mb-10">
+        <!-- 第一部分 -->
+        <div class="fade-in" style="animation-delay: 0.2s">
+            <h2 class="text-xl md:text-2xl font-bold mb-4 flex items-center">
+                <span class="inline-block w-8 h-8 bg-primary-600 dark:bg-primary-500 text-white rounded-full text-center leading-8 mr-2">1</span>
+                第一部分：基础题
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                <!-- 习题卡片1 -->
+                <div class="exercise-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-5 transition-all duration-300">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="font-semibold text-lg">习题 1.1</h3>
+                        <span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 text-xs font-medium px-2.5 py-0.5 rounded">基础</span>
+                    </div>
+                    <div class="prose dark:prose-invert max-w-none">
+                        <p>计算下面的表达式：</p>
+                        <div class="math-display bg-gray-50 dark:bg-gray-700 rounded-md p-3 my-2 overflow-x-auto">
+                            $$ \frac{3x^2 + 2x - 5}{x - 1} $$
+                        </div>
+                        <p>其中 x = 3</p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                        <div class="answer-toggle cursor-pointer flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300">
+                            <i class="fas fa-lightbulb mr-1"></i>
+                            <span>查看提示</span>
+                        </div>
+                        <div class="answer-content hidden mt-3 p-3 bg-gray-50 dark:bg-gray-700 rounded-md">
+                            <p>先将 x = 3 代入原表达式，然后进行计算。</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 习题卡片2 -->
+                <div class="exercise-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-5 transition-all duration-300">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="font-semibold text-lg">习题 1.2</h3>
+                        <span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 text-xs font-medium px-2.5 py-0.5 rounded">基础</span>
+                    </div>
+                    <div class="prose dark:prose-invert max-w-none">
+                        <p>解以下一元二次方程：</p>
+                        <div class="math-display bg-gray-50 dark:bg-gray-700 rounded-md p-3 my-2">
+                            $$ 2x^2 - 5x + 3 = 0 $$
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                        <div class="answer-toggle cursor-pointer flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300">
+                            <i class="fas fa-lightbulb mr-1"></i>
+                            <span>查看提示</span>
+                        </div>
+                        <div class="answer-content hidden mt-3 p-3 bg-gray-50 dark:bg-gray-700 rounded-md">
+                            <p>可以使用求根公式：$x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$，其中 a = 2, b = -5, c = 3</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 第二部分 -->
+        <div class="fade-in" style="animation-delay: 0.3s">
+            <h2 class="text-xl md:text-2xl font-bold mb-4 flex items-center">
+                <span class="inline-block w-8 h-8 bg-primary-600 dark:bg-primary-500 text-white rounded-full text-center leading-8 mr-2">2</span>
+                第二部分：进阶题
+            </h2>
+            <div class="grid grid-cols-1 gap-4 md:gap-6">
+                <!-- 习题卡片3 -->
+                <div class="exercise-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-5 transition-all duration-300">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="font-semibold text-lg">习题 2.1</h3>
+                        <span class="bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 text-xs font-medium px-2.5 py-0.5 rounded">进阶</span>
+                    </div>
+                    <div class="prose dark:prose-invert max-w-none">
+                        <p>证明以下等式：</p>
+                        <div class="math-display bg-gray-50 dark:bg-gray-700 rounded-md p-3 my-2">
+                            $$ \sum_{i=1}^{n} i^3 = \left(\sum_{i=1}^{n} i\right)^2 $$
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                        <div class="answer-toggle cursor-pointer flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300">
+                            <i class="fas fa-lightbulb mr-1"></i>
+                            <span>查看提示</span>
+                        </div>
+                        <div class="answer-content hidden mt-3 p-3 bg-gray-50 dark:bg-gray-700 rounded-md">
+                            <p>可以使用数学归纳法证明，也可以利用等式 $\sum_{i=1}^{n} i = \frac{n(n+1)}{2}$</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 第三部分 -->
+        <div class="fade-in" style="animation-delay: 0.4s">
+            <h2 class="text-xl md:text-2xl font-bold mb-4 flex items-center">
+                <span class="inline-block w-8 h-8 bg-primary-600 dark:bg-primary-500 text-white rounded-full text-center leading-8 mr-2">3</span>
+                第三部分：挑战题
+            </h2>
+            <div class="grid grid-cols-1 gap-4 md:gap-6">
+                <!-- 习题卡片4 -->
+                <div class="exercise-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-5 transition-all duration-300">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="font-semibold text-lg">习题 3.1</h3>
+                        <span class="bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200 text-xs font-medium px-2.5 py-0.5 rounded">挑战</span>
+                    </div>
+                    <div class="prose dark:prose-invert max-w-none">
+                        <p>解决以下问题：</p>
+                        <p>一个袋子里有5个红球和3个蓝球。小明随机取出2个球，然后又随机取出2个球。求取出的4个球中恰好有2个红球的概率。</p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                        <div class="answer-toggle cursor-pointer flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300">
+                            <i class="fas fa-lightbulb mr-1"></i>
+                            <span>查看提示</span>
+                        </div>
+                        <div class="answer-content hidden mt-3 p-3 bg-gray-50 dark:bg-gray-700 rounded-md">
+                            <p>这是一个超几何分布问题。考虑所有可能的情况：第一次取(2红0蓝)、(1红1蓝)或(0红2蓝)，然后计算第二次取球相应的概率。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 练习反馈部分 -->
+    <section class="mb-10 fade-in" style="animation-delay: 0.5s">
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
+            <h2 class="text-xl font-bold mb-4">习题反馈</h2>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">您觉得这套习题的难度如何？</label>
+                    <div class="flex space-x-2">
+                        <button class="difficulty-btn px-4 py-2 rounded-md text-sm font-medium border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">太简单</button>
+                        <button class="difficulty-btn px-4 py-2 rounded-md text-sm font-medium border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">适中</button>
+                        <button class="difficulty-btn px-4 py-2 rounded-md text-sm font-medium border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">太难</button>
+                    </div>
+                </div>
+                <div>
+                    <label for="feedback" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">有什么其他反馈吗？</label>
+                    <textarea id="feedback" rows="3" class="w-full px-3 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 focus:ring-primary-500 focus:border-primary-500 transition-colors" placeholder="请输入您的反馈..."></textarea>
+                </div>
+                <button class="px-4 py-2 bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 text-white rounded-md transition-colors">
+                    提交反馈
+                </button>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- 页脚 -->
+<footer class="bg-white dark:bg-gray-800 shadow-inner">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="border-t border-gray-200 dark:border-gray-700 pt-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="flex space-x-6 md:order-2">
+                    <a href="https://twitter.com/作者ID" class="text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300">
+                        <i class="fab fa-twitter"></i>
+                        <span class="sr-only">Twitter</span>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300">
+                        <i class="fab fa-github"></i>
+                        <span cass="sr-only">GitHub</span>
+                    </a>
+                </div>
+                <div class="mt-8 md:mt-0 md:order-1">
+                    <p class="text-center md:text-left text-sm text-gray-500 dark:text-gray-400">
+                        &copy; 2025 [作者姓名]. 保留所有权利。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- 加载 MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
+
+<!-- 主要JavaScript -->
+<script>
+    // 深色模式切换
+    const themeToggle = document.getElementById('theme-toggle');
+    
+    // 检查系统偏好和本地存储
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark');
+    }
+    
+    themeToggle.addEventListener('click', () => {
+        if (document.documentElement.classList.contains('dark')) {
+            document.documentElement.classList.remove('dark');
+            localStorage.theme = 'light';
+        } else {
+            document.documentElement.classList.add('dark');
+            localStorage.theme = 'dark';
+        }
+    });
+    
+    // 提示切换功能
+    document.querySelectorAll('.answer-toggle').forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const content = toggle.nextElementSibling;
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                toggle.querySelector('span').textContent = '隐藏提示';
+                toggle.querySelector('i').classList.remove('fa-lightbulb');
+                toggle.querySelector('i').classList.add('fa-eye-slash');
+            } else {
+                content.classList.add('hidden');
+                toggle.querySelector('span').textContent = '查看提示';
+                toggle.querySelector('i').classList.remove('fa-eye-slash');
+                toggle.querySelector('i').classList.add('fa-lightbulb');
+            }
+        });
+    });
+    
+    // 难度按钮切换
+    document.querySelectorAll('.difficulty-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.difficulty-btn').forEach(b => {
+                b.classList.remove('bg-primary-100', 'text-primary-800', 'dark:bg-primary-900', 'dark:text-primary-200', 'border-primary-300', 'dark:border-primary-700');
+            });
+            btn.classList.add('bg-primary-100', 'text-primary-800', 'dark:bg-primary-900', 'dark:text-primary-200', 'border-primary-300', 'dark:border-primary-700');
+        });
+    });
+    
+    // 懒加载
+    document.addEventListener("DOMContentLoaded", function() {
+        const lazyLoadSections = document.querySelectorAll('section');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        lazyLoadSections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+</script>
